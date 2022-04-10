@@ -1,0 +1,8 @@
+.vs
+obj
+/WordlsWithFriendsAPI/bin
+/WordlsWithFriendsAPI/WeatherForecast.cs
+/WordlsWithFriendsAPI/Controllers/WeatherForecastController.cs
+/WordlsWithFriendsAPI/appsettings.Development.json
+/WordlsWithFriendsAPI/appsettings.json
+bin
