@@ -21,6 +21,7 @@ namespace GameFrameAPI
         {
             Configuration = configuration;
         }
+         
 
         public IConfiguration Configuration { get; }
 
