@@ -2,7 +2,7 @@
 
 namespace GameFrameAPI.Migrations
 {
-    public partial class update_img_urls : Migration
+    public partial class initialcreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

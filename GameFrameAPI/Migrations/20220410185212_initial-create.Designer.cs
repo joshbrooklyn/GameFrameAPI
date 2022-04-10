@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameFrameAPI.Migrations
 {
     [DbContext(typeof(GamedleDBContext))]
-    [Migration("20220409132416_update_img_urls")]
-    partial class update_img_urls
+    [Migration("20220410185212_initial-create")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,7 +19,7 @@ namespace GameFrameAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.13");
 
-            modelBuilder.Entity("GamedleAPI.Entities.DailyGame", b =>
+            modelBuilder.Entity("GameFrameAPI.Entities.DailyGame", b =>
                 {
                     b.Property<int>("DailyGameID")
                         .ValueGeneratedOnAdd()
@@ -38,7 +38,7 @@ namespace GameFrameAPI.Migrations
                     b.ToTable("DailyGames");
                 });
 
-            modelBuilder.Entity("GamedleAPI.Entities.Game", b =>
+            modelBuilder.Entity("GameFrameAPI.Entities.Game", b =>
                 {
                     b.Property<int>("GameId")
                         .ValueGeneratedOnAdd()
@@ -90,7 +90,7 @@ namespace GameFrameAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("GamedleAPI.Entities.Platform", b =>
+            modelBuilder.Entity("GameFrameAPI.Entities.Platform", b =>
                 {
                     b.Property<int>("PlatformId")
                         .ValueGeneratedOnAdd()
@@ -444,7 +444,7 @@ namespace GameFrameAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("GamedleAPI.Entities.Screenshot", b =>
+            modelBuilder.Entity("GameFrameAPI.Entities.Screenshot", b =>
                 {
                     b.Property<int>("ScreenshotId")
                         .ValueGeneratedOnAdd()
@@ -595,18 +595,18 @@ namespace GameFrameAPI.Migrations
                         });
                 });
 
-            modelBuilder.Entity("GamedleAPI.Entities.DailyGame", b =>
+            modelBuilder.Entity("GameFrameAPI.Entities.DailyGame", b =>
                 {
-                    b.HasOne("GamedleAPI.Entities.Game", "Game")
+                    b.HasOne("GameFrameAPI.Entities.Game", "Game")
                         .WithMany("DailyGames")
                         .HasForeignKey("GameId");
 
                     b.Navigation("Game");
                 });
 
-            modelBuilder.Entity("GamedleAPI.Entities.Game", b =>
+            modelBuilder.Entity("GameFrameAPI.Entities.Game", b =>
                 {
-                    b.HasOne("GamedleAPI.Entities.Platform", "Platform")
+                    b.HasOne("GameFrameAPI.Entities.Platform", "Platform")
                         .WithMany("Games")
                         .HasForeignKey("PlatformId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -615,9 +615,9 @@ namespace GameFrameAPI.Migrations
                     b.Navigation("Platform");
                 });
 
-            modelBuilder.Entity("GamedleAPI.Entities.Screenshot", b =>
+            modelBuilder.Entity("GameFrameAPI.Entities.Screenshot", b =>
                 {
-                    b.HasOne("GamedleAPI.Entities.Game", "Game")
+                    b.HasOne("GameFrameAPI.Entities.Game", "Game")
                         .WithMany("Screenshots")
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -626,14 +626,14 @@ namespace GameFrameAPI.Migrations
                     b.Navigation("Game");
                 });
 
-            modelBuilder.Entity("GamedleAPI.Entities.Game", b =>
+            modelBuilder.Entity("GameFrameAPI.Entities.Game", b =>
                 {
                     b.Navigation("DailyGames");
 
                     b.Navigation("Screenshots");
                 });
 
-            modelBuilder.Entity("GamedleAPI.Entities.Platform", b =>
+            modelBuilder.Entity("GameFrameAPI.Entities.Platform", b =>
                 {
                     b.Navigation("Games");
                 });

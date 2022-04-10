@@ -37,7 +37,8 @@ namespace GameFrameAPI.Entities
 
             List<Platform> SeedData = new List<Platform>();
 
-            using (var reader = new StreamReader("SeedData\\Game.Frame - Platforms.csv"))
+            string filePath = Path.Combine("SeedData", "Game.Frame - Platforms.csv");
+            using (var reader = new StreamReader(filePath))
             {
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {

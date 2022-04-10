@@ -45,7 +45,10 @@ namespace GameFrameAPI.Entities
                 .HasForeignKey(e=> e.PlatformId);
 
             List<Game> SeedData = new List<Game>();
-            using (var reader = new StreamReader("SeedData\\Game.Frame - Games.csv"))
+
+            string filePath = Path.Combine("SeedData", "Game.Frame - Games.csv");
+            
+            using (var reader = new StreamReader(filePath))
             {
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
