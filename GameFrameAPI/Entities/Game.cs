@@ -21,7 +21,7 @@ namespace GameFrameAPI.Entities
         public int PlatformId { get; set; }
 
         public int Year { get; set; }
-        public int CopiesSold { get; set; }
+        public int? CopiesSold { get; set; }
 
         public virtual Platform Platform { get; set; }
         public virtual ICollection<Screenshot> Screenshots { get; set; }
@@ -57,6 +57,11 @@ namespace GameFrameAPI.Entities
 
                     while (csv.Read())
                     {
+                        int? CopiesSold = null;
+
+                        if (!String.IsNullOrEmpty(csv.GetField("CopiesSold")))
+                            CopiesSold = Int32.Parse(csv.GetField("CopiesSold"));
+
                         SeedData.Add(
                             new Game()
                             {
@@ -64,7 +69,7 @@ namespace GameFrameAPI.Entities
                                 GameName = csv.GetField("GameName"),
                                 PlatformId = Int32.Parse(csv.GetField("PlatformId")),
                                 Year = Int32.Parse(csv.GetField("GameId")),
-                                CopiesSold = Int32.Parse(csv.GetField("CopiesSold"))
+                                CopiesSold = CopiesSold
                             }
                         );
                     }

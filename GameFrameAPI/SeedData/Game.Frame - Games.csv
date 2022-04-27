@@ -1,4 +1,21 @@
-GameId,GameName,PlatformId,Year,CopiesSold
-17001,Super Mario Bros. 3,17,1988,18000000
-17002,Kung Fu,17,1986,3500000
-17003,Punch Out,17,1987,2000000
+PuzzleNo,GameId,GameName,PlatformId,Platform Year,CopiesSold
+1,17001,Super Mario Bros. 3,17,1983,18000000
+2,17002,Kung Fu,17,1983,3500000
+3,17003,Punch Out,17,1983,2000000
+4,21001,Sonic 2,21,1988,6000000
+5,17004,Metroid,17,1983,2730000
+6,17005,Excitebike,17,1983,1570000
+7,23001,Legend of Zelda - Link to the Past,23,1990,4610000
+8,17006,Tetris,17,1983,8000000
+9,23003,Chrono Trigger,23,1990,
+10,17007,Dragon Warrior 3,17,1983,
+11,17008,Legend of Zelda,17,1983,
+12,17009,RC Pro Am,17,1983,
+13,17012,Mega Man 2,17,1983,
+14,17013,Duck Tales,17,1983,
+15,17025,Bad Dudes,17,1983,
+16,21002,Aladdin,21,1988,
+17,17026,Contra,17,1983,
+18,17024,Top Gun,17,1983,
+19,23004,F-Zero,23,1990,
+20,17027,TMNT 2,17,1983,

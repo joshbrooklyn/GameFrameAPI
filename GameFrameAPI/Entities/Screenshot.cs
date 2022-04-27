@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace GameFrameAPI.Entities
@@ -51,6 +52,11 @@ namespace GameFrameAPI.Entities
 
                     while (csv.Read())
                     {
+                        string pattern = @"https:\/\/drive\.google\.com\/file\/d\/(.{1,})\/";
+                        var match = Regex.Match(csv.GetField("ImageURL"), pattern);
+                        string ImageId = match.Groups[1].Value;
+                        string ImageURL = $"https://drive.google.com/thumbnail?id={ImageId}";
+
                         SeedData.Add(
                             new Screenshot()
                             {
@@ -58,7 +64,7 @@ namespace GameFrameAPI.Entities
                                 ScreenshotId = ScreenshotId,
                                 GameId = Int32.Parse(csv.GetField("GameId")),
                                 SequenceNo = Int32.Parse(csv.GetField("SequenceNo")),
-                                ImageURL = csv.GetField("ImageURL")
+                                ImageURL = ImageURL
                             }
                         );
 

@@ -55,7 +55,7 @@ namespace GameFrameAPI.Entities
                                 PlatformName = csv.GetField("PlatformName"),
                                 PlatformCompany = csv.GetField("PlatformCompany"),
                                 Year = Int32.Parse(csv.GetField("Year")),
-                                UnitsSold = Int32.Parse(csv.GetField("UnitsSold")),
+                                UnitsSold = Int32.Parse(csv.GetField("UnitsSold").Replace(",",string.Empty).Replace(".00",string.Empty)),
                                 ConsoleGeneration = Int32.Parse(csv.GetField("ConsoleGeneration"))
                             }
                         );

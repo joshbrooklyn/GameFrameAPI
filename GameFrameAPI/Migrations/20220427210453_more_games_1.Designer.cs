@@ -3,14 +3,16 @@ using System;
 using GameFrameAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameFrameAPI.Migrations
 {
     [DbContext(typeof(GamedleDBContext))]
-    partial class GamedleDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220427210453_more_games_1")]
+    partial class more_games_1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
